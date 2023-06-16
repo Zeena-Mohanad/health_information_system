@@ -19,11 +19,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from health.view import MyView
 from ninja import NinjaAPI
-from health.controller import health_controller
+from health.controller import router
 from account.controller import auth_router
 
 api = NinjaAPI()
-#api.add_router('/health',health_controller)
+api.add_router('/health',router)
 api.add_router('/account',auth_router)
 
 urlpatterns = [
